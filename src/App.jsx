@@ -6,6 +6,9 @@ import Intro from "./components/Intro";
 import MainScreen from "./components/MainScreen";
 import LoveStory from "./components/LoveStory";
 import Gallery from "./components/Gallery";
+import StorySlideshow from "./components/StorySlideshow";
+import Slideshow from "./components/Slideshow";
+import LoveLetters from "./components/LoveLetters";
 import Letter from "./components/Letter";
 import Surprise from "./components/Surprise";
 import FinalScreen from "./components/FinalScreen";
@@ -17,6 +20,9 @@ const sections = [
   "main",
   "loveStory",
   "gallery",
+  "storySlideshow",
+  "slideshow",
+  "letters",
   "letter",
   "surprise",
   "final",
@@ -45,6 +51,12 @@ function App() {
         return <LoveStory onNext={goNext} />;
       case "gallery":
         return <Gallery onNext={goNext} />;
+      case "storySlideshow":
+        return <StorySlideshow onNext={goNext} />;
+      case "slideshow":
+        return <Slideshow onNext={goNext} />;
+      case "letters":
+        return <LoveLetters onNext={goNext} />;
       case "letter":
         return <Letter onNext={goNext} />;
       case "surprise":

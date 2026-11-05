@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Balloon, Sparkles } from "lucide-react";
 import BirthdayCake from "./BirthdayCake";
+import Countdown from "./Countdown";
 import { config } from "../birthdayConfig";
 
 const balloons = [
@@ -138,6 +139,8 @@ function MainScreen({ onCelebrate }) {
             </AnimatePresence>
           )}
         </div>
+
+        <Countdown />
 
         <motion.div className="mb-7 mt-7 origin-center scale-90 sm:scale-100" variants={item}>
           <BirthdayCake />

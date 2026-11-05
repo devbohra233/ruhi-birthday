@@ -94,6 +94,8 @@ function Fireworks() {
 
     resize();
     window.addEventListener("resize", resize);
+    const observer = new ResizeObserver(resize);
+    observer.observe(canvas);
 
     if (!reduceMotion) {
       burst(viewport.width * 0.5, viewport.height * 0.26);
@@ -104,6 +106,7 @@ function Fireworks() {
     return () => {
       cancelAnimationFrame(animation.frame);
       window.removeEventListener("resize", resize);
+      observer.disconnect();
     };
   }, []);
 

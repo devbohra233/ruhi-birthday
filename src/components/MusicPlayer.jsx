@@ -98,7 +98,13 @@ function MusicPlayer() {
       return;
     }
     togglePlay();
-  };
+  }
+
+  useEffect(() => {
+    const playRequested = () => togglePlay();
+    window.addEventListener("ruhi:play-music", playRequested);
+    return () => window.removeEventListener("ruhi:play-music", playRequested);
+  });;
 
   const handleSeek = (event) => {
     const audio = audioRef.current;
